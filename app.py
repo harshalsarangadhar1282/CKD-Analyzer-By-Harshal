@@ -1,7 +1,7 @@
+%%writefile app.py
 import streamlit as st
 import numpy as np
 
-import streamlit as st
 
 # ================= PAGE CONFIG =================
 st.set_page_config(
@@ -15,6 +15,11 @@ st.markdown("""
 <style>
 .stApp {
     background: linear-gradient(to right, #e3f2fd, #ffffff);
+}
+
+/* -------- FIX: Subheader color -------- */
+h2, h3 {
+    color: #000000 !important;
 }
 
 /* Title */
@@ -55,7 +60,10 @@ label {
 """, unsafe_allow_html=True)
 
 # ================= TITLE =================
-st.markdown('<div class="main-title">🩺 Chronic Kidney Disease Prediction System</div>', unsafe_allow_html=True)
+st.markdown(
+    '<div class="main-title">🩺 Chronic Kidney Disease Prediction System</div>',
+    unsafe_allow_html=True
+)
 st.markdown("---")
 
 # ================= INPUT SECTION =================
@@ -94,6 +102,7 @@ st.markdown("---")
 
 # -------- MEDICAL HISTORY --------
 st.subheader("❤️ Medical History")
+
 c1, c2, c3 = st.columns(3)
 
 with c1:
